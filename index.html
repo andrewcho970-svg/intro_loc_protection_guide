@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+<title>Lexus Care Protection Guide &amp; Cash vs. Finance — Advisor Rollout</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  --bg:#0a0b0d; --panel:#141519; --panel-2:#1a1c21; --line:#292c32;
+  --platinum:#e4e6ea; --muted:#9096a3; --gold:#c6a664;
+  --font-display:'Space Grotesk','Inter',sans-serif; --font-body:'Inter',-apple-system,sans-serif;
+}
+* { box-sizing:border-box; }
+html,body { margin:0; height:100%; background:var(--bg); color:var(--platinum); font-family:var(--font-body);
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px); }
+html.js, html.js body { overflow:hidden; }
+html.js body { display:flex; flex-direction:column; height:100vh; height:100dvh; }
+html:not(.js), html:not(.js) body { height:auto; }
+html:not(.js) .nav-bar, html:not(.js) .page-tabs { display:none; }
+html:not(.js) .slide { border-bottom:1px solid var(--line); min-height:70vh; }
+
+.deck { position:relative; flex:1; min-height:0; display:flex; flex-direction:column; }
+.slide {
+  display:flex; flex:1; flex-direction:column; justify-content:center;
+  padding:48px 64px; max-width:860px; margin:0 auto; width:100%; overflow-y:auto;
+}
+html.js .slide { display:none; }
+html.js .slide.is-active { display:flex; }
+
+.eyebrow { font-family:var(--font-body); font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold); margin:0 0 14px; }
+h1.title { font-family:var(--font-display); font-size:40px; font-weight:600; letter-spacing:-0.01em; margin:0 0 10px; line-height:1.15; }
+h2.heading { font-family:var(--font-display); font-size:30px; font-weight:600; letter-spacing:-0.005em; margin:0 0 14px; line-height:1.2; }
+p.lead { font-size:15px; color:var(--muted); line-height:1.6; margin:0 0 26px; max-width:640px; }
+.meta-line { font-size:12.5px; color:var(--muted); margin-top:30px; }
+.meta-line a { color:var(--gold); text-decoration:none; border-bottom:1px solid rgba(198,166,100,0.35); }
+.meta-line a:hover { border-bottom-color:var(--gold); }
+.gold-rule { width:46px; height:2px; background:var(--gold); margin:0 0 20px; }
+
+.grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.card {
+  background:var(--panel); border:1px solid var(--line); border-radius:6px; padding:16px 18px;
+}
+.card h3 { font-family:var(--font-display); font-size:14px; font-weight:600; color:var(--platinum); margin:0 0 6px; }
+.card p { font-size:12.5px; color:var(--muted); margin:0; line-height:1.5; }
+.card .tag { display:inline-block; font-size:10.5px; color:var(--gold); letter-spacing:0.04em; margin-bottom:6px; }
+
+ul.feature-list { margin:0; padding:0; list-style:none; }
+ul.feature-list li {
+  font-size:14px; color:var(--platinum); padding:10px 0 10px 20px; position:relative;
+  border-bottom:1px solid var(--line);
+}
+ul.feature-list li:last-child { border-bottom:none; }
+ul.feature-list li::before { content:''; position:absolute; left:0; top:17px; width:7px; height:7px; border-radius:50%; background:var(--gold); }
+ul.feature-list li b { color:var(--gold); font-weight:600; }
+
+.lang-grid { display:grid; grid-template-columns:repeat(5, 1fr); gap:8px; margin-bottom:22px; }
+.lang-chip {
+  background:var(--panel); border:1px solid var(--line); border-radius:4px; padding:8px 6px;
+  text-align:center; font-size:11.5px; color:var(--platinum);
+}
+
+/* nav */
+.nav-bar {
+  display:flex; align-items:center; justify-content:space-between; padding:16px 64px;
+  border-top:1px solid var(--line); background:var(--panel); flex:none;
+}
+.nav-btn {
+  background:transparent; border:1px solid var(--line); color:var(--platinum); border-radius:4px;
+  width:34px; height:34px; font-size:16px; cursor:pointer; display:flex; align-items:center; justify-content:center;
+}
+.nav-btn:hover { border-color:var(--gold); color:var(--gold); }
+.nav-btn:disabled { opacity:.3; cursor:default; }
+.nav-btn:disabled:hover { border-color:var(--line); color:var(--platinum); }
+.counter { font-family:var(--font-body); font-size:12px; color:var(--muted); letter-spacing:0.04em; }
+.brand-mark { font-family:var(--font-display); font-size:12.5px; font-weight:600; color:var(--gold); letter-spacing:0.04em; }
+
+.page-tabs { display:flex; gap:6px; padding:12px 64px 0; }
+.page-tab {
+  font-family:var(--font-body); font-size:11.5px; font-weight:600; letter-spacing:0.03em;
+  color:var(--muted); background:var(--panel); border:1px solid var(--line); border-radius:4px;
+  padding:7px 14px; cursor:pointer;
+}
+.page-tab.is-active { color:var(--gold); border-color:var(--gold); background:var(--panel-2); }
+
+@media (max-width:720px){
+  .slide { padding:32px 22px; }
+  h1.title { font-size:28px; }
+  h2.heading { font-size:22px; }
+  .grid { grid-template-columns:1fr; }
+  .lang-grid { grid-template-columns:repeat(3,1fr); }
+  .nav-bar { padding:14px 20px; }
+  .page-tabs { padding:12px 20px 0; }
+}
+</style>
+<script>document.documentElement.className+=' js';</script>
+</head>
+<body>
+<div class="deck">
+
+  <div class="page-tabs">
+    <button class="page-tab is-active" id="tab1" type="button">Page 1 &middot; Protection Guide</button>
+    <button class="page-tab" id="tab2" type="button">Page 2 &middot; Cash vs. Finance</button>
+  </div>
+
+  <div class="slide is-active" data-page="1">
+    <div class="eyebrow">Full Advisor Rollout &middot; Saturday, October 3, 2026</div>
+    <h1 class="title">Lexus Care<br/>Protection Guide</h1>
+    <div class="gold-rule"></div>
+    <p class="lead">Live for a month, already in use by a few of us — this session walks every product advisor through the guide, so the whole team can bring it into every guest conversation.</p>
+    <ul class="feature-list">
+      <li><b>One Place</b> — the complete protection lineup, in a single link</li>
+      <li><b>Full Functionality</b> — built-in payment calculator and guest-ready sharing</li>
+      <li><b>Multi-Language</b> — 10 languages, switched instantly</li>
+      <li><b>Design Language</b> — a deliberate black &amp; gold system</li>
+    </ul>
+    <div class="meta-line">Andrew Cho &middot; Saturday morning, October 3, 2026 &middot; <a href="https://loc-protection-guide.vercel.app" target="_blank" rel="noopener">loc&#8209;protection&#8209;guide.vercel.app</a></div>
+  </div>
+
+  <div class="slide" data-page="1">
+    <div class="eyebrow">01 &middot; One Place</div>
+    <h2 class="heading">The Complete Protection Lineup, In One Link</h2>
+    <p class="lead">Every protection product we offer, in a single guided guest experience — no binder, no separate PDFs, no hunting for the right rate sheet.</p>
+    <ul class="feature-list">
+      <li><b>9 product sections</b> — ECP Platinum, LCPO Programs, Lubrico Warranties, XPEL/CeramX Surface Protection, Smart Program, Wear Pass, Tire &amp; Rim / Road Hazard Glass, Theft Protection</li>
+      <li><b>Jump-to-section Contents menu</b> — guests (or advisors) tap straight to the plan that matters, mid-conversation</li>
+      <li><b>One link to maintain</b> — pricing and terms updated in one place, not nine documents</li>
+    </ul>
+  </div>
+
+  <div class="slide" data-page="1">
+    <div class="eyebrow">02 &middot; Full Functionality</div>
+    <h2 class="heading">Built-In Calculator, Built-In Sharing</h2>
+    <p class="lead">This isn't a static brochure — guests can build a real quote and take it with them.</p>
+    <div class="grid">
+      <div class="card">
+        <span class="tag">PAYMENT CALCULATOR</span>
+        <h3>Cash or Finance</h3>
+        <p>Add any combination of products to a running cart, see the subtotal live, and toggle cash vs. financed — rate, term, down payment — for instant monthly &amp; bi-weekly estimates.</p>
+      </div>
+      <div class="card">
+        <span class="tag">SHARE WITH GUESTS</span>
+        <h3>Email &middot; Text &middot; WhatsApp &middot; QR</h3>
+        <p>One Share tap opens the device's native share sheet — email, text, WhatsApp, and more — plus a dedicated QR code to scan in-showroom and a clean Print view.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide" data-page="1">
+    <div class="eyebrow">03 &middot; Multi-Language</div>
+    <h2 class="heading">10 Languages, Zero Reload</h2>
+    <p class="lead">Calgary's guests don't all speak the same language — the guide shouldn't force them to. One tap switches the entire page instantly, with no separate translated documents to keep in sync.</p>
+    <div class="lang-grid">
+      <div class="lang-chip">English</div>
+      <div class="lang-chip">Français</div>
+      <div class="lang-chip">Español</div>
+      <div class="lang-chip">中文（普通话）</div>
+      <div class="lang-chip">中文（廣東話）</div>
+      <div class="lang-chip">日本語</div>
+      <div class="lang-chip">한국어</div>
+      <div class="lang-chip">العربية</div>
+      <div class="lang-chip">Tiếng Việt</div>
+      <div class="lang-chip">हिन्दी</div>
+    </div>
+  </div>
+
+  <div class="slide" data-page="1">
+    <div class="eyebrow">04 &middot; Design Language</div>
+    <h2 class="heading">Black &amp; Gold, Throughout</h2>
+    <p class="lead">Every screen in the guide shares one deliberate visual language, so flipping between product sections feels like one premium experience, not nine different documents stitched together.</p>
+    <div class="grid">
+      <div class="card"><span class="tag">PALETTE</span><h3>Charcoal &amp; Gold</h3><p>Deep near-black base, warm gold as the only accent — restrained, never loud.</p></div>
+      <div class="card"><span class="tag">TYPE</span><h3>Space Grotesk + Inter</h3><p>A confident display face for headings, a clean body face for dense product detail.</p></div>
+      <div class="card"><span class="tag">MOTION</span><h3>Quiet, Intentional</h3><p>Subtle transitions only — nothing flashy, nothing that competes with the content.</p></div>
+      <div class="card"><span class="tag">BONUS LINK</span><h3>Cash vs. Finance &amp; Invest</h3><p>The guide closes with a link to a companion tool — covered next.</p></div>
+    </div>
+  </div>
+
+  <div class="slide" data-page="2">
+    <div class="eyebrow">Companion Tool &middot; Saturday, October 3, 2026</div>
+    <h1 class="title">Cash vs. Finance<br/>&amp; Invest</h1>
+    <div class="gold-rule"></div>
+    <p class="lead">Linked from the Protection Guide's closing section — a standalone tool for the question every guest eventually asks: pay cash, or finance and invest the difference?</p>
+    <ul class="feature-list">
+      <li><b>Guest's Own Numbers</b> — purchase amount, rate, term and expected return</li>
+      <li><b>Side-by-Side Comparison</b> — principal, net gain, invest vs. finance, live</li>
+      <li><b>Same Design System</b> — same black &amp; gold language as the main guide</li>
+    </ul>
+    <div class="meta-line">Andrew Cho &middot; Saturday morning, October 3, 2026 &middot; <a href="https://investment-financing-calculator.vercel.app" target="_blank" rel="noopener">investment&#8209;financing&#8209;calculator.vercel.app</a></div>
+  </div>
+
+  <div class="slide" data-page="2">
+    <div class="eyebrow">01 &middot; What It Does</div>
+    <h2 class="heading">Pay Cash, or Finance &amp; Invest the Difference?</h2>
+    <p class="lead">Paying cash means no interest, no monthly payment. Financing frees that same cash to be invested instead — which path wins depends on rate, term and return. This tool walks a guest through it with their own numbers.</p>
+    <div class="grid">
+      <div class="card">
+        <span class="tag">INPUTS</span>
+        <h3>Guest-Driven</h3>
+        <p>Investment amount, expected return (Conservative / Balanced / Growth / Aggressive presets), interest rate, and term in years.</p>
+      </div>
+      <div class="card">
+        <span class="tag">OUTPUT</span>
+        <h3>Live Comparison</h3>
+        <p>Invest vs. Finance vs. Net Gain, side by side, recalculated instantly as numbers change.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide" data-page="2">
+    <div class="eyebrow">02 &middot; Why It's Separate</div>
+    <h2 class="heading">Its Own App, Its Own Conversation</h2>
+    <p class="lead">Pulled out of the main guide so it can be shared and used on its own — a natural next step once a guest has picked their protection plan and the conversation turns to how to pay for it.</p>
+    <ul class="feature-list">
+      <li>Reachable directly from the Protection Guide's bonus section, or shared on its own</li>
+      <li>Same black &amp; gold visual system — <b>feels like one continuous experience</b>, not a separate product</li>
+      <li>Framed as <b>educational, not financial advice</b> — includes historical return context and a clear risk disclaimer</li>
+      <li>Shareable via QR code, straight from the app, for in-showroom use</li>
+    </ul>
+    <div class="meta-line"><a href="https://investment-financing-calculator.vercel.app" target="_blank" rel="noopener">investment&#8209;financing&#8209;calculator.vercel.app</a></div>
+  </div>
+
+</div>
+
+<div class="nav-bar">
+  <button class="nav-btn" id="prevBtn" type="button" aria-label="Previous">&#8249;</button>
+  <span class="counter"><span id="counter">1 / 6</span></span>
+  <span class="brand-mark">LEXUS CARE</span>
+  <button class="nav-btn" id="nextBtn" type="button" aria-label="Next">&#8250;</button>
+</div>
+
+<script>
+(function(){
+  var slides = document.querySelectorAll('.slide');
+  var total = slides.length;
+  var idx = 0;
+  var counter = document.getElementById('counter');
+  var prevBtn = document.getElementById('prevBtn');
+  var nextBtn = document.getElementById('nextBtn');
+  var tab1 = document.getElementById('tab1');
+  var tab2 = document.getElementById('tab2');
+  var page2StartIdx = 0;
+  slides.forEach(function(s, i){ if (s.getAttribute('data-page') === '2' && page2StartIdx === 0) page2StartIdx = i; });
+
+  function render(){
+    slides.forEach(function(s, i){ s.classList.toggle('is-active', i === idx); });
+    counter.textContent = (idx + 1) + ' / ' + total;
+    prevBtn.disabled = idx === 0;
+    nextBtn.disabled = idx === total - 1;
+    var onPage2 = idx >= page2StartIdx;
+    tab1.classList.toggle('is-active', !onPage2);
+    tab2.classList.toggle('is-active', onPage2);
+  }
+  function go(delta){
+    var next = idx + delta;
+    if (next < 0 || next >= total) return;
+    idx = next;
+    render();
+  }
+  function goTo(i){ idx = i; render(); }
+  prevBtn.addEventListener('click', function(){ go(-1); });
+  nextBtn.addEventListener('click', function(){ go(1); });
+  tab1.addEventListener('click', function(){ goTo(0); });
+  tab2.addEventListener('click', function(){ goTo(page2StartIdx); });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'ArrowRight') go(1);
+    if (e.key === 'ArrowLeft') go(-1);
+  });
+  var sx=0, sy=0;
+  document.addEventListener('touchstart', function(e){ sx=e.changedTouches[0].clientX; sy=e.changedTouches[0].clientY; }, {passive:true});
+  document.addEventListener('touchend', function(e){
+    var dx=e.changedTouches[0].clientX-sx, dy=e.changedTouches[0].clientY-sy;
+    if (Math.abs(dx)>50 && Math.abs(dx)>Math.abs(dy)*1.5) go(dx<0?1:-1);
+  }, {passive:true});
+  render();
+})();
+</script>
+</body>
+</html>
